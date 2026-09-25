@@ -1,16 +1,10 @@
 # WorldPolls
 
-An interactive global opinion atlas: answer a question first, then explore how respondents around the world answered.
+WorldPolls is an interactive global-opinion atlas. Respondents answer before seeing results, then explore geographic patterns on an interactive world map.
 
-## Current MVP
+## Current public MVP
 
-- Interactive world map
-- Vote-before-results flow
-- Five starter questions across geopolitics, security, economics, institutions and migration
-- Aggregate result visualizations
-- Responsive desktop/mobile interface
-- Clear demo-data and methodology labeling
-- Question navigation
+The site includes responsive desktop/mobile UI, interactive zoomable world map, country search and map-based country selection, five starter questions, vote-before-results flow, browser-persistent votes, self-reported respondent country, heatmap result exploration, methodology/privacy information, and GitHub Pages deployment.
 
 ## Run locally
 
@@ -19,19 +13,12 @@ npm install
 npm run dev
 ```
 
-Then open the local URL printed by Vite.
+## Important data limitation
 
-## Production build
+The current GitHub Pages build is a client-only MVP. Votes are saved in the respondent's browser with localStorage. **Heatmap percentages are illustrative demo values, not scientific polling and not aggregated user votes.**
 
-```bash
-npm run build
-npm run preview
-```
+A production public polling service needs a server-side database/API and operational safeguards: rate limiting, duplicate/bot/brigading controls, privacy and retention policy, moderation/admin tooling, backups, monitoring, accessibility review, field dates, sample sizes, geographic coverage, and a documented weighting methodology before results can be described as representative.
 
-## Data note
+## Deployment
 
-All percentages and response counts currently included are **illustrative demo data, not scientific polling**. A public production version should disclose field dates, sample composition, weighting and geographic coverage, and should avoid describing a convenience sample as representative of “the world.”
-
-## Next phase
-
-The front-end is intentionally structured as an MVP. The next major step is a real backend (for example Postgres/Supabase) for polls and votes, followed by anonymous vote controls, country-level respondent breakdowns, moderation/admin tooling, privacy protections and deployment.
+Pushes to `main` deploy through GitHub Actions to GitHub Pages.
